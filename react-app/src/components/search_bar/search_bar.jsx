@@ -1,7 +1,7 @@
 import React from 'react'
 
-import './index.css'
-function index() {
+import './search_bar.css'
+function Search_Bar() {
   return (
       <div className="search-container">
           <textarea className='search_bar__text_area_field'  placeholder="Search for reference" rows="2" cols="80"></textarea>
@@ -10,4 +10,4 @@ function index() {
   )
 }
 
-export default index
+export default Search_Bar
