@@ -1,13 +1,11 @@
 import React from 'react'
 import './index.css'
+import Search_bar from '/src/components/search_bar'
 function index() {
   return (
     <div className="container">
       <img src="src/assets/images/img03.avif" alt="Quran Image" />
-      <div className="search-container">
-        <input type="text" id="query" placeholder="Enter your query..." />
-        <button>Search</button>
-      </div>
+      <Search_bar />
       <div className="verse-container">
         <div className="verse">
           <h2>Verse 1</h2>
@@ -28,7 +26,7 @@ function index() {
       <button className="see-more" >
         See More
 
-        <i class="down_icon fa-solid fa-arrow-down"></i>
+        <i className="down_icon fa-solid fa-arrow-down"></i>
       </button>
     </div>
   )

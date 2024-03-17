@@ -1,0 +1,33 @@
+.search-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.search_bar__text_area_field{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: 2px solid #6c64ff5e;
+}
+
+.search_bar__text_area_field:focus{
+    outline: 2px solid var(--highlight-color);
+}
+
+.search_bar_button{
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search_bar_button:hover{
+    background-color: var(--highlight-color);
+}
+
