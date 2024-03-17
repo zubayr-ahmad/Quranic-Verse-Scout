@@ -1,0 +1,20 @@
+.verse {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.verse h2 {
+    margin-bottom: 10px;
+}
+
+.arabic {
+    font-size: 18px;
+}
+
+.translation {
+    font-style: italic;
+    color: #666;
+}
