@@ -1,19 +1,20 @@
 import React from 'react'
 import './verse_container.css'
+import { useNavigate } from 'react-router-dom'
 function verse_container(props) {
-    const { ayah } = props
-    console.log("Ayah",ayah);
+    const navigate = useNavigate()
+    const { ayah, id } = props
+    console.log(props)
+    const seeTafseer = (id) => {
+        navigate(`/tafseer/${id}`)
+    }
     return (
         <div className="verse">
-            <button class="cta btn-tafseer">
-                <span>Tafseer</span>
-                {/* <svg width="15px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                </svg> */}
+            <button class="btn-tafseer" title='Tafseer' onClick={() => seeTafseer(id)}>
+                <i class="fa-solid fa-book-open"></i>
             </button>
             {/* <h2>Verse 1</h2> */}
-            <p className="arabic">{ayah.arabic}</p>
+            <p className="arabic">{ayah.arabic}  <i>[{ayah.number}]</i></p>
 
             <p className="translation">{ayah.translation}</p>
         </div>
