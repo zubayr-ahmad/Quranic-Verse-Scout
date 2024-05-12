@@ -1,6 +1,7 @@
 .search-container {
     margin-top: 20px;
     position: relative;
+    
 }
 
 .search_bar__text_area_field{
@@ -8,6 +9,7 @@
     width: 100%;
     border-radius: 5px;
     outline: 2px solid #6c64ff5e;
+    min-height: 55px;
 }
 
 .search_bar__text_area_field:focus{

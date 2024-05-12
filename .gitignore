@@ -3,3 +3,6 @@ WorkFlow.txt
 Extras/
 QuranEnv/
 credentials.py
+__pycache__/
+.idea/
+.vscode/
