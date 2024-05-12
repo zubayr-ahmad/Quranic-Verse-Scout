@@ -13,7 +13,7 @@ function Verses_box() {
     <>
     <div className="verse-container">
         {showAyahs.map((ayah, index) => (
-        <Verse_container key={index} ayah={ayah}/>
+        <Verse_container key={index} ayah={ayah} id={index}/>
       ))
       }
       </div>
