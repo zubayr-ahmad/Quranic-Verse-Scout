@@ -12,6 +12,9 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+.see-more:hover {
+    background-color: var(--highlight-color);
+}
 
 .see-more .down_icon {
     color: #edf3fa;
