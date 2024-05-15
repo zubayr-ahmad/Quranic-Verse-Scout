@@ -14,9 +14,9 @@ function verse_container(props) {
                 <i class="fa-solid fa-book-open"></i>
             </button>
             {/* <h2>Verse 1</h2> */}
-            <p className="arabic">{ayah.arabic}  <i>[{ayah.number}]</i></p>
+            <p className="arabic">{ayah.text}  <i>[{ayah.ayat_number}]</i></p>
 
-            <p className="translation">{ayah.translation}</p>
+            <p className="translation">{ayah.english}</p>
         </div>
     )
 }
