@@ -17,5 +17,5 @@ UPDATE unique_eng_words
 SET id = (@id := @id + 1) limit 10000;
 
 
-SELECT * FROM unique_eng_words WHERE LOWER(word) like 'the%';
+SELECT * FROM unique_eng_words WHERE LOWER(word) like 'precincts%';
 
