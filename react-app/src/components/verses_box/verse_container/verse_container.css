@@ -7,9 +7,17 @@
     position: relative
 }
 
+.verse-content{
+    width: 93%;
+    margin: auto;
+}
+
 
 .arabic {
-    font-size: 18px;
+    font-size: 25px;
+    font-family: "Amiri Quran", serif;
+    word-spacing: 3px;
+    line-height: 50px;
 }
 
 .btn-tafseer{
@@ -28,6 +36,7 @@
 
 
 .translation {
+    margin-top: 14px;
     font-style: italic;
-    color: #666;
+    color: #293034;
 }

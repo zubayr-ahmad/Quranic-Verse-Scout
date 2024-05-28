@@ -7,3 +7,5 @@ __pycache__/
 .idea/
 .vscode/
 Backend/IRS/db_credentials.py
+Backend/Bert/db_credentials.py
+Backend/Bert/Runtime_Data/

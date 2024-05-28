@@ -13,10 +13,10 @@ function verse_container(props) {
             <button class="btn-tafseer" title='Tafseer' onClick={() => seeTafseer(id)}>
                 <i class="fa-solid fa-book-open"></i>
             </button>
-            {/* <h2>Verse 1</h2> */}
-            <p className="arabic">{ayah.text}  <i>[{ayah.ayat_number}]</i></p>
-
-            <p className="translation">{ayah.english}</p>
+            <div className='verse-content'>
+                <p className="arabic">{ayah.text}  <i>[{ayah.ayat_number}]</i></p>
+                <p className="translation">{ayah.english}</p>
+            </div>
         </div>
     )
 }
