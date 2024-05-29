@@ -34,7 +34,7 @@ def create_ayah_json(indexes, ayahs):
     for idx in indexes:
         mycursor.execute(f"SELECT * FROM ayahs WHERE id = {idx+1}")
         ayat = mycursor.fetchall()
-        ayat_obj = {"text":ayat[0][2], "verse_id":ayat[0][0], 'surah_id':ayat[0][5], "ayat_number":f"{ayat[0][5]}:{ayat[0][3]}", "english": f"{ayahs[idx]}"}
+        ayat_obj = {"text":ayat[0][2], "verse_id":ayat[0][0], "number_in_surah":ayat[0][3],'surah_id':ayat[0][5], "ayat_number":f"{ayat[0][5]}:{ayat[0][3]}", "english": f"{ayahs[idx]}"}
         top_ayahs.append(ayat_obj)
     return top_ayahs
 
