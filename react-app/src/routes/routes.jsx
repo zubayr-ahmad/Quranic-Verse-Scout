@@ -7,7 +7,7 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='' element={<App />}>
             <Route path='' element={<Home />} />
-            <Route path='tafseer/:verse_id' element={<Tafseer />} />
+            <Route path='tafseer/:surah_id/:verse_id' element={<Tafseer />} />
         </Route>
     )
 )
