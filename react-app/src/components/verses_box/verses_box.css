@@ -22,3 +22,13 @@
     height: 20px;
     margin-left: 10px;
 }
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: var(--primary-color);
+    font-size: larger;
+    font-weight: bold;
+}

@@ -1,0 +1,4 @@
+conda create --name quranenv python=3.12.5
+conda activate quranenv
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
+pip install flask flask-cors mysql-connector-python sentence-transformers faiss-cpu

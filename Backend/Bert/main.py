@@ -23,8 +23,10 @@ CORS(app)      # Allow all origins
 @app.route("/get_ayahs", methods=["GET"])
 def get_ayahs():
     no_of_ayahs = request.args.get("no_of_ayahs", 10)
-    query = request.args.get("query", "find something from quran")
+    query = request.args.get("query", "Allah loves his prophets.")
+    print("Importing Ayahs")
     ayahs = import_ayahs()
+    print("Ayahs Imported")
     top_ayahs_indexes, _ = main(query, no_of_ayahs)  
     ayah = create_ayah_json(list(top_ayahs_indexes), ayahs)
     return {"ayahs": ayah}
@@ -37,8 +39,6 @@ def create_ayah_json(indexes, ayahs):
         ayat_obj = {"text":ayat[0][2], "verse_id":ayat[0][0], "number_in_surah":ayat[0][3],'surah_id':ayat[0][5], "ayat_number":f"{ayat[0][5]}:{ayat[0][3]}", "english": f"{ayahs[idx]}"}
         top_ayahs.append(ayat_obj)
     return top_ayahs
-
-
 
 
 if __name__ == "__main__":
