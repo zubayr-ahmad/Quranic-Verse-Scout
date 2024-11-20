@@ -58,7 +58,7 @@ const Summary = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/get_surah_summary?surah_id=${selectedSurah.number}`
+        `http://localhost:5000/summarize?surah_id=${selectedSurah.number}`
       );
       const data = await response.json();
       setSummary(data.summary);
