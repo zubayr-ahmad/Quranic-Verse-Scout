@@ -78,11 +78,6 @@ def summarize_records():
         return jsonify({"error": f"Database error: {e}"}), 500
     except Exception as e:
         return jsonify({"error": f"An error occurred: {e}"}), 500
-    finally:
-        if mycursor:
-            mycursor.close()
-        if mydb:
-            mydb.close()
 
 if __name__ == "__main__":
     app.run(debug=True)  # Allow specific origins
