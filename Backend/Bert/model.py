@@ -5,7 +5,9 @@ import os
 import re
 import numpy as np
 
-BASE_DIR = os.getcwd()+'/Backend/Bert/'
+# BASE_DIR = os.getcwd()+'/Backend/Bert/'
+BASE_DIR = os.getcwd()
+BASE_DIR = BASE_DIR.replace('\\','/') + '/'
 def import_model(model_name):
     """import model from sentence transformers"""
     directory = BASE_DIR + 'Runtime_Data/'
@@ -102,10 +104,14 @@ def search(query, model, index, ayahs, k=10):
 def main(query, no_of_ayahs=10):
     model_name = 'all-mpnet-base-v2'
     model = import_model(model_name)
+    print("Model Imported")
     ayahs = import_ayahs()
     cleaned_ayahs = process_ayahs(ayahs)
+    print("Ayahs Processed")
     embeddings = generate_embeddings(model_name, model,  cleaned_ayahs)
+    print("Embeddings Generated")
     index = get_index(embeddings)
+    print("Index Created")
     # query = "find something from quran"
     similar_verses, distances_similar_verses = search(query, model, index, ayahs, no_of_ayahs)
     return similar_verses, distances_similar_verses

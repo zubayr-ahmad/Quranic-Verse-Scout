@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './search_bar.css'
 
-function Search_Bar({ setAyahs }) {
+function Search_Bar({ setAyahs, setIsLoading }) {
   const [textAreaValue, setTextAreaValue] = useState('');
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     const response = await fetch(`http://localhost:5000/get_ayahs?query=${encodeURIComponent(textAreaValue)}`, {
       method: 'GET',
       headers: {
@@ -13,6 +14,7 @@ function Search_Bar({ setAyahs }) {
     });
     const data = await response.json();
     setAyahs(data.ayahs);
+    setIsLoading(false);
   };
 
   return (

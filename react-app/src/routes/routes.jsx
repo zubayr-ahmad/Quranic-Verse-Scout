@@ -5,8 +5,8 @@ import Tafseer from '../pages/tafseer/tafseer'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path='' element={<App />}>
-            <Route path='' element={<Home />} />
+        <Route path='/' element={<App />}>
+            <Route path='/' element={<Home />} />
             <Route path='tafseer/:surah_id/:verse_id' element={<Tafseer />} />
         </Route>
     )
