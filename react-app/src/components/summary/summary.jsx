@@ -58,7 +58,7 @@ const Summary = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/get_surah_summary?id=${selectedSurah.number}`
+        `http://localhost:5000/get_surah_summary?surah_id=${selectedSurah.number}`
       );
       const data = await response.json();
       setSummary(data.summary);
@@ -72,7 +72,7 @@ const Summary = () => {
 
   return (
     <div className="summary">
-      <h2>Select a Surah</h2>
+      <h2>Generate Summary</h2>
       <div className="summary-input-container" ref={dropdownRef}>
         <input
           type="text"
@@ -98,8 +98,8 @@ const Summary = () => {
             ))}
           </div>
         )}
-      <button className="fetch-summary-btn" onClick={fetchSurahSummary}>
-        Generate Summary
+      <button className="fetch-summary-btn" title="summarize" onClick={fetchSurahSummary}>
+        <img src="/src/assets/images/icons8-quran-42.png" alt="summarize"/>
       </button>
       </div>
       {isLoading && <p>Loading summary...</p>}

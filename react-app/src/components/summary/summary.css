@@ -3,20 +3,20 @@
     font-family: Arial, sans-serif;
     padding: 20px;
     max-width: 400px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .summary-input-container {
     position: relative;
     max-width: 100%;
     display: flex;
+    gap: 10px;
 }
 
 .summary-input-search-box {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -50,8 +50,7 @@
 }
 
 .fetch-summary-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
+    padding: 3px 3px;
     font-size: 14px;
     color: white;
     background-color: #007bff;
@@ -66,8 +65,9 @@
 
 .surah-summary {
     margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #4caf50;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background: #f0fff4;
+    background: #fff;
+    min-width: 700px;;
 }
