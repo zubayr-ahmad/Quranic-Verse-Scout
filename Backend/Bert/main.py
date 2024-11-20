@@ -40,6 +40,15 @@ def create_ayah_json(indexes, ayahs):
         top_ayahs.append(ayat_obj)
     return top_ayahs
 
+@app.route("/get_surah_summary", methods=["GET"])
+def get_surah_summary():
+    print("Surah ID: ", request.args.get("surah_id"))
+    surah_summary = "Surha Fatiha is the first surah of the Quran. It is also known as Umm-ul-Quran or the Mother of the Quran. It is a short surah with only 7 verses. Surah Fatiha is recited in every unit of the prayer. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran. It is a prayer for guidance and mercy from Allah. Surah Fatiha is also known as the Opening because it is the opening chapter of the Quran. Surah Fatiha is a summary of the entire Quran."
+
+    return jsonify({"summary": surah_summary})
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)  # Allow specific origins

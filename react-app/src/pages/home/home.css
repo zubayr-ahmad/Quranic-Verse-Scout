@@ -5,7 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
+.search-container {
     max-width: 800px;
     margin: 20px auto;
     text-align: center;
@@ -15,10 +15,20 @@ img {
     max-width: 100%;
 }
 
-input[type="text"] {
+/* input[type="text"] {
     padding: 10px;
     width: 60%;
     border: 1px solid #ccc;
     border-radius: 5px;
+} */
+
+.container {
+    display: flex;
+    align-items:flex-start;
 }
 
+.summary-container {
+    width: 100%;
+    margin-top: 15px;
+    border: 2px solid red;
+}
