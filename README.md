@@ -91,14 +91,29 @@ The Surah summarizer uses Retrieval-Augmented Generation (RAG) technology to cre
 2. Generating summaries based solely on the actual content
 3. Ensuring no hallucination or incorrect information is included
 
-## 🤝 Contributors
 
-The amazing contributors who made this project possible:
-- [Anas Tahir](https://github.com/ANAS-TAAHIR), [LinkedIn](https://www.linkedin.com/in/anas-waleed-tahir-9a5b78214)
-- [Muhammad Abdullah Ghazi](https://github.com/abdullahdotnet), [LinkedIn](https://www.linkedin.com/in/abdullahdotnet20/)
-- [Muhammad Zubair](https://github.com/zubayr-ahmad), [LinkedIn](https://www.linkedin.com/in/zubayr-ahmad/)
+## 🤝 Contributors  
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The amazing contributors who made this project possible:  
+
+| Name                      | GitHub Profile                           | LinkedIn Profile                                                   |
+|---------------------------|-------------------------------------------|---------------------------------------------------------------------|
+| **Anas Tahir**            | <a href="https://github.com/ANAS-TAAHIR"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white" /></a> |<a href="https://www.linkedin.com/in/anas-waleed-tahir-9a5b78214"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" /></a> |
+| **Muhammad Abdullah Ghazi** | <a href="https://github.com/abdullahdotnet"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white" /></a> | <a href="https://www.linkedin.com/in/abdullahdotnet20/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" /></a> |
+| **Muhammad Zubair**       | <a href="https://github.com/zubayr-ahmad"><img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white" /></a> | <a href="https://www.linkedin.com/in/zubayr-ahmad/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" /></a> |  
+
+### ✨ Join Our Mission
+
+We welcome contributions from developers, Islamic scholars, and anyone passionate about making the Quran more accessible through technology. Whether it's improving the search algorithm, enhancing the UI, or adding new features, your contribution can help millions connect better with the Holy Quran.
+
+To contribute:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+For major changes, please open an issue first to discuss what you would like to change. Let's work together to make this tool even more beneficial for the Ummah! 🌟
 
 ## 📝 License
 
