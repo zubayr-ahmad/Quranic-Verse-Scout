@@ -1,24 +1,47 @@
-import React from 'react'
-import './home.css'
-import Search_bar from '/src/components/search_bar/search_bar'
-import Verses_box from '/src/components/verses_box/verses_box'
-import Home_Image from '/src/components/home_image/home_image'
-import Summary from '../../components/summary/summary'
+import React from "react";
+import "./home.css";
+import { useNavigate } from "react-router-dom";
+
 function Home() {
-  const [ayahs, setAyahs] = React.useState([])
-  const [isLoading, setIsLoading] = React.useState(false);
+  const navigate = useNavigate();
+
+  const handleSelect = (path) => {
+    navigate(path);
+  };
+
   return (
-    <div className='container'>
-      <div className="search-container">
-        <Home_Image />
-        <Search_bar setAyahs={setAyahs} setIsLoading={setIsLoading} />
-        <Verses_box ayahs={ayahs} isLoading={isLoading} />
-      </div>
-      <div className='summary-container'>
-        <Summary />
+    <div className="home-container">
+      <h1 className="title">QURANIC VERSE SCOUT</h1>
+      <div className="cards-container">
+        <div className="card">
+          <h2 className="card-title">Verse Finder</h2>
+          <p className="card-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet nulla auctor, vestibulum magna sed, convallis ex.
+          </p>
+          <button
+            className="card-button"
+            onClick={() => handleSelect("/verse-finder")}
+          >
+            Select
+          </button>
+        </div>
+        <div className="card">
+          <h2 className="card-title">Surah Summary</h2>
+          <p className="card-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet nulla auctor, vestibulum magna sed, convallis ex.
+          </p>
+          <button
+            className="card-button"
+            onClick={() => handleSelect("/surah-summary")}
+          >
+            Select
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

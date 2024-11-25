@@ -9,3 +9,4 @@ __pycache__/
 Backend/IRS/db_credentials.py
 Backend/Bert/db_credentials.py
 Backend/Bert/Runtime_Data/
+*.code-workspace
