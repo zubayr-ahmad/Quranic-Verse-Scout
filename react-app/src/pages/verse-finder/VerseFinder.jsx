@@ -1,35 +1,24 @@
-import React, { useState, useEffect } from "react";
-import Verses_box from "../../components/verses_box/verses_box";
-import Search_Bar from "../../components/search_bar/search_bar";
+import React from "react";
 import "./VerseFinder.css";
-
-const VerseFinder = () => {
-  const [ayahs, setAyahs] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate an API call
-    setTimeout(() => {
-      setAyahs([
-        { id: 1, text: "Ayah 1 text" },
-        { id: 2, text: "Ayah 2 text" },
-        { id: 3, text: "Ayah 3 text" },
-        { id: 4, text: "Ayah 4 text" },
-        { id: 5, text: "Ayah 5 text" },
-      ]);
-      setIsLoading(false);
-    }, 1000);
-  }, []);
-
+import Search_bar from "/src/components/search_bar/search_bar";
+import Verses_box from "/src/components/verses_box/verses_box";
+import Summary from "../../components/summary/summary";
+function VerseFinder() {
+  const [ayahs, setAyahs] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
   return (
     <>
-      <div className="verse-finder-container">
-        <h1 className="verse-finder-title">Verse Finder</h1>
+      <div className="verse-finder-title">
+        <h1>Verse Finder</h1>
       </div>
-      <Search_Bar setAyahs={setAyahs} setIsLoading={setIsLoading} />
-      <Verses_box ayahs={ayahs} isLoading={isLoading} />
+      <div className="verse-finder-container">
+        <div className="verse-finder-search-container">
+          <Search_bar setAyahs={setAyahs} setIsLoading={setIsLoading} />
+          <Verses_box ayahs={ayahs} isLoading={isLoading} />
+        </div>
+      </div>
     </>
   );
-};
+}
 
 export default VerseFinder;

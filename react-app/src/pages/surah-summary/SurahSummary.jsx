@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Summary from "../../components/summary/summary";
 
 const SurahSummary = () => {
   return (
-    <div>SurahSummary</div>
-  )
-}
+    <>
+      <Summary />
+    </>
+  );
+};
 
-export default SurahSummary
+export default SurahSummary;
