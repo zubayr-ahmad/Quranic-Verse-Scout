@@ -7,12 +7,13 @@ const Summary = () => {
   const [filteredSurahs, setFilteredSurahs] = useState(surah.data);
   const [selectedSurah, setSelectedSurah] = useState(null);
   const [summary, setSummary] = useState("");
+  const [translatedSummary, setTranslatedSummary] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdownRef = useRef(null);
 
-  // Handle clicks outside the dropdown to close it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -30,7 +31,6 @@ const Summary = () => {
     const query = e.target.value.toLowerCase();
     setSearchText(query);
 
-    // Filter surahs by name or number
     const filtered = surah.data.filter(
       (s) =>
         s.englishName.toLowerCase().includes(query) ||
@@ -44,8 +44,8 @@ const Summary = () => {
 
   const handleSelectSurah = (s) => {
     setSelectedSurah(s);
-    setSearchText(`${s.number}. ${s.englishName}`); // Populate input with surah name
-    setShowDropdown(false); // Close dropdown
+    setSearchText(`${s.number}. ${s.englishName}`);
+    setShowDropdown(false);
   };
 
   const fetchSurahSummary = async () => {
@@ -53,7 +53,8 @@ const Summary = () => {
       alert("Please select a Surah first!");
       return;
     }
-    setSummary(""); // Clear previous summary
+    setSummary("");
+    setTranslatedSummary("");
 
     setIsLoading(true);
     try {
@@ -70,6 +71,28 @@ const Summary = () => {
     }
   };
 
+  const translateSummary = async () => {
+    if (!summary) {
+      alert("Please generate a summary first!");
+      return;
+    }
+
+    setTranslatedSummary("");
+    setIsTranslating(true);
+    try {
+      const response = await fetch(
+        `http://localhost:5000/translate?summary=${encodeURIComponent(summary)}`
+      );
+      const data = await response.json();
+      setTranslatedSummary(data.summary);
+    } catch (error) {
+      console.error("Error translating summary:", error);
+      setTranslatedSummary("Failed to translate. Please try again later.");
+    } finally {
+      setIsTranslating(false);
+    }
+  };
+
   return (
     <div className="summary">
       <h2>Generate Summary</h2>
@@ -80,7 +103,7 @@ const Summary = () => {
           placeholder="Search Surah by name or number"
           value={searchText}
           onChange={handleSearch}
-          onFocus={() => setShowDropdown(true)} // Show dropdown on focus
+          onFocus={() => setShowDropdown(true)}
         />
         {showDropdown && (
           <div className="dropdown">
@@ -98,15 +121,33 @@ const Summary = () => {
             ))}
           </div>
         )}
-      <button className="fetch-summary-btn" title="summarize" onClick={fetchSurahSummary}>
-        <img src="/src/assets/images/icons8-quran-42.png" alt="summarize"/>
-      </button>
+        <button
+          className="fetch-summary-btn"
+          title="summarize"
+          onClick={fetchSurahSummary}
+        >
+          <img src="/src/assets/images/icons8-quran-42.png" alt="summarize" />
+        </button>
       </div>
       {isLoading && <p>Loading summary...</p>}
       {summary && (
         <div className="surah-summary">
           <h3>Surah Summary:</h3>
           <p>{summary}</p>
+          <button
+            className="translate-btn"
+            title="Translate to Urdu"
+            onClick={translateSummary}
+          >
+            Translate to Urdu
+          </button>
+        </div>
+      )}
+      {isTranslating && <p>Translating summary...</p>}
+      {translatedSummary && (
+        <div className="translated-summary">
+          <h3>Translated Summary:</h3>
+          <p>{translatedSummary}</p>
         </div>
       )}
     </div>
