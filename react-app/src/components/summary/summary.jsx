@@ -116,6 +116,8 @@ const Summary = () => {
         `http://localhost:5000/translate?summary=${encodeURIComponent(summary)}`
       );
       const data = await response.json();
+      console.log(data);
+      
       setTranslatedSummary(data.summary);
     } catch (error) {
       console.error("Error translating summary:", error);
