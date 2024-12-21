@@ -69,19 +69,36 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background: #fff;
-    min-width: 700px;;
+    min-width: 700px;
+
 }
-/* Surah summary container */
+
+
 .surah-summary {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
     border-radius: 8px;
-    background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
+
+.formatted-summary {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.formatted-summary strong {
+    color: #1a237e;
+    font-weight: 600;
+}
+
+.loading-message {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
   
-  /* Translation section */
   /* Translation section */
 .translated-summary {
     margin: 20px auto; /* Center the section */
@@ -125,4 +142,3 @@
   .translate-btn:hover {
     background-color: #0056b3;
   }
-  

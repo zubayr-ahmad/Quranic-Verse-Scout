@@ -2,6 +2,38 @@ import React, { useState, useEffect, useRef } from "react";
 import { surah } from "../../utils/surah";
 import "./summary.css";
 
+const formatText = (text) => {
+  // Process the text in multiple passes for different formatting types
+  const processText = (input) => {
+    // Handle bold text
+    const boldParts = input.split(/(\*\*.*?\*\*)/g);
+    return boldParts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={`bold-${index}`}>{part.slice(2, -2)}</strong>;
+      }
+      
+      // Handle italics
+      if (part.startsWith('*') && part.endsWith('*')) {
+        return <em key={`italic-${index}`}>{part.slice(1, -1)}</em>;
+      }
+      
+      // Handle lists
+      if (part.startsWith('- ')) {
+        return <li key={`list-${index}`}>{part.slice(2)}</li>;
+      }
+      
+      // Handle paragraphs
+      if (part.trim().length > 0) {
+        return <p key={`text-${index}`}>{part}</p>;
+      }
+      
+      return null;
+    });
+  };
+
+  return processText(text);
+};
+
 const Summary = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredSurahs, setFilteredSurahs] = useState(surah.data);
@@ -84,6 +116,8 @@ const Summary = () => {
         `http://localhost:5000/translate?summary=${encodeURIComponent(summary)}`
       );
       const data = await response.json();
+      console.log(data);
+      
       setTranslatedSummary(data.summary);
     } catch (error) {
       console.error("Error translating summary:", error);
@@ -121,19 +155,25 @@ const Summary = () => {
             ))}
           </div>
         )}
-        <button
-          className="fetch-summary-btn"
-          title="summarize"
+        <button 
+          className="fetch-summary-btn" 
+          title="summarize" 
           onClick={fetchSurahSummary}
         >
-          <img src="/src/assets/images/icons8-quran-42.png" alt="summarize" />
+          <img src="/src/assets/images/icons8-quran-42.png" alt="summarize"/>
+
         </button>
       </div>
-      {isLoading && <p>Loading summary...</p>}
+      {isLoading && (
+        <div className="loading-message">
+          <p>Generating summary...</p>
+        </div>
+      )}
       {summary && (
         <div className="surah-summary">
-          <h3>Surah Summary:</h3>
-          <p>{summary}</p>
+          <div className="formatted-summary">
+            {formatText(summary)}
+          </div>
           <button
             className="translate-btn"
             title="Translate to Urdu"

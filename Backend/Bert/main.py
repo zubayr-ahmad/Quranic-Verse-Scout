@@ -45,8 +45,9 @@ def translate_to_urdu(text, aws_region="us-east-1"):
         str: Translated text in Urdu.
     """
     # Initialize the Translate client
+    print("inside translate")
     translate_client = boto3.client('translate', region_name=aws_region)
-    
+    print(translate_client)
     try:
         # Call the Translate API
         response = translate_client.translate_text(
@@ -56,6 +57,7 @@ def translate_to_urdu(text, aws_region="us-east-1"):
         )
         # Extract the translated text from the response
         translated_text = response['TranslatedText']
+        print(translated_text)
         return translated_text
     
     except Exception as e:
