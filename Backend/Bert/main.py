@@ -31,6 +31,38 @@ def get_next_api_key():
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)  # Allow all origins
+import boto3
+
+def translate_to_urdu(text, aws_region="us-east-1"):
+    """
+    Translates English text into Urdu using the Amazon Translate API.
+
+    Parameters:
+        text (str): The English text to be translated.
+        aws_region (str): AWS region where the Translate service is hosted. Default is "us-east-1".
+
+    Returns:
+        str: Translated text in Urdu.
+    """
+    # Initialize the Translate client
+    translate_client = boto3.client('translate', region_name=aws_region)
+    
+    try:
+        # Call the Translate API
+        response = translate_client.translate_text(
+            Text=text,
+            SourceLanguageCode="en",  # Source language (English)
+            TargetLanguageCode="ur"   # Target language (Urdu)
+        )
+        # Extract the translated text from the response
+        translated_text = response['TranslatedText']
+        return translated_text
+    
+    except Exception as e:
+        print(f"Error during translation: {e}")
+        return None
+
+
 
 @app.route("/get_ayahs", methods=["GET"])
 def get_ayahs():
@@ -57,10 +89,11 @@ def create_ayah_json(indexes, ayahs):
         top_ayahs.append(ayat_obj)
     return top_ayahs
 
+
 @app.route('/summarize', methods=['GET'])
 def summarize_records():
     try:
-        # Extract the `surah_id` from request parameters
+        # Extract the surah_id from request parameters
         surah_id = request.args.get('surah_id')
         surah_name = request.args.get('surah_name')
         if not surah_id:
@@ -113,6 +146,22 @@ def summarize_records():
         return jsonify({"error": f"Database error: {e}"}), 500
     except Exception as e:
         return jsonify({"error": f"An error occurred: {e}"}), 500
+    
+@app.route('/translate', methods=['GET'])
+def translate_summary():
+    try:
+        # Extract the surah_id from request parameters
+        summary = request.args.get('summary')
+        if not summary:
+            return jsonify({"error": "summary is required"}), 400
+
+        
+        # Return the summary in the response
+        return jsonify({"summary": translate_to_urdu(summary)}), 200
+    except Exception as e:
+        return jsonify({"error": f"An error occurred: {e}"}), 500
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)  # Allow specific origins
