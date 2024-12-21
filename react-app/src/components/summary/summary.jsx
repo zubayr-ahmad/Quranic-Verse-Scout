@@ -39,7 +39,9 @@ const Summary = () => {
   const [filteredSurahs, setFilteredSurahs] = useState(surah.data);
   const [selectedSurah, setSelectedSurah] = useState(null);
   const [summary, setSummary] = useState("");
+  const [translatedSummary, setTranslatedSummary] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdownRef = useRef(null);
@@ -84,6 +86,7 @@ const Summary = () => {
       return;
     }
     setSummary("");
+    setTranslatedSummary("");
 
     setIsLoading(true);
     try {
@@ -97,6 +100,28 @@ const Summary = () => {
       setSummary("Failed to fetch summary. Please try again later.");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const translateSummary = async () => {
+    if (!summary) {
+      alert("Please generate a summary first!");
+      return;
+    }
+
+    setTranslatedSummary("");
+    setIsTranslating(true);
+    try {
+      const response = await fetch(
+        `http://localhost:5000/translate?summary=${encodeURIComponent(summary)}`
+      );
+      const data = await response.json();
+      setTranslatedSummary(data.summary);
+    } catch (error) {
+      console.error("Error translating summary:", error);
+      setTranslatedSummary("Failed to translate. Please try again later.");
+    } finally {
+      setIsTranslating(false);
     }
   };
 
@@ -134,6 +159,7 @@ const Summary = () => {
           onClick={fetchSurahSummary}
         >
           <img src="/src/assets/images/icons8-quran-42.png" alt="summarize"/>
+
         </button>
       </div>
       {isLoading && (
@@ -146,6 +172,20 @@ const Summary = () => {
           <div className="formatted-summary">
             {formatText(summary)}
           </div>
+          <button
+            className="translate-btn"
+            title="Translate to Urdu"
+            onClick={translateSummary}
+          >
+            Translate to Urdu
+          </button>
+        </div>
+      )}
+      {isTranslating && <p>Translating summary...</p>}
+      {translatedSummary && (
+        <div className="translated-summary">
+          <h3>Translated Summary:</h3>
+          <p>{translatedSummary}</p>
         </div>
       )}
     </div>
