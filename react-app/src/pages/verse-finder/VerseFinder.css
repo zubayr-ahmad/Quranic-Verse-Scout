@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.verse-finder-search-container {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+.verse-finder-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.verse-finder-title {
+  color: white;
+  /* padding: 10p x; */
+  width: 100%;
+}
+
+.verse-finder-title h1 {
+  /* center the heading with white color text */
+  text-align: center;
+  color: white;
+  width: 100%;
+  font-size: 72px;
+  padding: 20px;
+}
