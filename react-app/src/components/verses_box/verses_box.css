@@ -10,6 +10,7 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+
 .see-more:hover {
     background-color: var(--highlight-color);
 }
@@ -29,4 +30,55 @@
     color: var(--primary-color);
     font-size: larger;
     font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .verse-container {
+        margin-top: 20px;
+    width: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%; /* Reduce top margin */
+    }
+
+    .see-more {
+        padding: 8px 16px; /* Adjust button padding */
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+
+    .see-more .down_icon {
+        width: 16px; /* Adjust icon size */
+        height: 16px;
+        margin-left: 8px;
+    }
+
+    .loading {
+        height: 34px; /* Adjust loading container height */
+        font-size: medium; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .verse-container {
+        margin-top: 10px; /* Further reduce top margin */
+    }
+
+    .see-more {
+        padding: 6px 12px; /* Further reduce button padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .see-more .down_icon {
+        width: 14px; /* Smaller icon size */
+        height: 14px;
+        margin-left: 6px;
+    }
+
+    .loading {
+        height: 30px; /* Further adjust height */
+        font-size: small; /* Reduce font size */
+    }
 }

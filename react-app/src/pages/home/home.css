@@ -1,53 +1,99 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 72px;
+  margin-bottom: 20px;
+  padding: 5px;
+  color: #fff;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+}
+
+.card {
+  background-color: #ffffff1c;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: calc(50% - 10px); /* Default to two columns */
+}
+
+.card-title {
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card-description {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.card-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background-color: var(--highlight-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .title {
-    font-size: 72px;
-    margin-bottom: 20px;
-    padding: 5px;
-    color: #fff;
+      font-size: 48px; /* Smaller title font */
   }
-  
+
   .cards-container {
-    display: flex;
-    gap: 20px;
+      gap: 10px; /* Reduce gap between cards */
   }
-  
+
   .card {
-    background-color: #ffffff1c;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: calc(50% - 10px);
+      width: calc(100% - 20px); /* Full width for cards */
   }
-  
+
   .card-title {
-    font-size: 46px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: white;
+      font-size: 32px; /* Adjust card title font */
   }
-  
+
   .card-description {
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
+      font-size: 16px; /* Adjust description font */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 36px; /* Further reduce title font */
+  }
+
+  .card {
+      padding: 15px; /* Reduce padding */
+  }
+
+  .card-title {
+      font-size: 28px; /* Smaller title font for very small screens */
+  }
+
+  .card-description {
+      font-size: 14px; /* Adjust description font */
+  }
+
   .card-button {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+      padding: 8px 16px; /* Smaller button size */
   }
-  
-  .card-button:hover {
-    background-color: var(--highlight-color);
-  }
+}
