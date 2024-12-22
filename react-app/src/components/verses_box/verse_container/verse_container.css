@@ -4,14 +4,13 @@
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative
+    position: relative;
 }
 
-.verse-content{
+.verse-content {
     width: 93%;
     margin: auto;
 }
-
 
 .arabic {
     font-size: 25px;
@@ -20,7 +19,7 @@
     line-height: 50px;
 }
 
-.btn-tafseer{
+.btn-tafseer {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -30,13 +29,69 @@
     border-radius: 6px;
 }
 
-.btn-tafseer:hover{
+.btn-tafseer:hover {
     background-color: var(--highlight-color);
 }
-
 
 .translation {
     margin-top: 14px;
     font-style: italic;
     color: #293034;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .verse {
+        padding: 15px; /* Reduce padding */
+        margin-bottom: 15px;
+    }
+
+    .verse-content {
+        width: 95%; /* Adjust content width */
+    }
+
+    .arabic {
+        font-size: 20px; /* Reduce font size */
+        line-height: 40px; /* Adjust line height */
+        word-spacing: 2px; /* Adjust spacing */
+    }
+
+    .btn-tafseer {
+        top: 8px; /* Adjust button position */
+        left: 8px;
+        padding: 1px 6px; /* Reduce button padding */
+        font-size: 12px; /* Adjust button font size */
+    }
+
+    .translation {
+        font-size: 14px; /* Reduce font size for translation */
+    }
+}
+
+@media (max-width: 480px) {
+    .verse {
+        padding: 10px; /* Further reduce padding */
+        margin-bottom: 10px;
+    }
+
+    .verse-content {
+        width: 100%; /* Full width */
+    }
+
+    .arabic {
+        font-size: 18px; /* Further reduce font size */
+        line-height: 35px; /* Adjust line height */
+        word-spacing: 1px; /* Adjust spacing for smaller screens */
+    }
+
+    .btn-tafseer {
+        top: 5px; /* Adjust button position for smaller screens */
+        left: 5px;
+        padding: 1px 5px; /* Further reduce button padding */
+        font-size: 10px; /* Smaller button font size */
+    }
+
+    .translation {
+        font-size: 12px; /* Smaller font size for translation */
+    }
 }

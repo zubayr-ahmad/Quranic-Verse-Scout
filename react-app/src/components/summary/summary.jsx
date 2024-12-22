@@ -92,7 +92,7 @@ const Summary = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/api/summarize?surah_id=${selectedSurah.number}&surah_name=${selectedSurah.englishName}`
+        `http://43.205.169.200:5000/api/summarize?surah_id=${selectedSurah.number}&surah_name=${selectedSurah.englishName}`
       );
       const data = await response.json();
       setSummary(data.summary);
@@ -114,7 +114,7 @@ const Summary = () => {
     setIsTranslating(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/api/translate?summary=${encodeURIComponent(summary)}`
+        `http://43.205.169.200:5000/api/translate?summary=${encodeURIComponent(summary)}`
       );
       const data = await response.json();
       console.log(data);

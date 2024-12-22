@@ -1,10 +1,8 @@
 .search-container {
-    /* margin-top: 20px; */
     position: relative;
-    
 }
 
-.search_bar__text_area_field{
+.search_bar__text_area_field {
     padding: 10px;
     width: 100%;
     border-radius: 5px;
@@ -12,11 +10,11 @@
     min-height: 55px;
 }
 
-.search_bar__text_area_field:focus{
+.search_bar__text_area_field:focus {
     outline: 2px solid var(--highlight-color);
 }
 
-.search_bar_button{
+.search_bar_button {
     position: absolute;
     right: 20px;
     bottom: 12px;
@@ -29,14 +27,53 @@
     outline: none;
 }
 
-.search_bar_button:hover{
+.search_bar_button:hover {
     background-color: var(--highlight-color);
 }
 
-/* input[type="text"] {
-    padding: 10px;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-} */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-container {
+        margin-top: 20px;
+        width: 150%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+    }
 
+    .search_bar__text_area_field {
+        min-height: 45px; /* Reduce height */
+        font-size: 14px;
+         /* Adjust font size */
+    }
+
+    .search_bar_button {
+        right: 20px; /* Adjust position */
+        bottom: 10px;
+        padding: 8px; /* Reduce button padding */
+        font-size: 12px; 
+       /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        margin-top: 15px;
+    }
+
+    .search_bar__text_area_field {
+        min-height: 40px; /* Further reduce height */
+        font-size: 12px; /* Smaller font for very small screens */
+        padding: 8px;
+        
+    }
+
+    .search_bar_button {
+        right: 5px; /* Adjust position for smaller screens */
+        bottom: 8px;
+        padding: 6px; /* Further reduce button padding */
+        font-size: 10px; /* Smaller button font size */
+    }
+}
