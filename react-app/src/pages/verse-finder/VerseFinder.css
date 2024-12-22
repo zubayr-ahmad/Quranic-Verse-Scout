@@ -7,12 +7,14 @@ body {
 
 .verse-finder-search-container {
   /* max-width: 800px; */
-  margin: 20px auto;
+  /* margin: 20px auto; */
   text-align: center;
 }
 .verse-finder-container {
   display: flex;
   align-items: flex-start;
+  max-width: 60%;
+  margin: auto;
 }
 
 .verse-finder-title h2 {

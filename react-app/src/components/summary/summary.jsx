@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { surah } from "../../utils/surah";
 import "./summary.css";
+import icon from "../../../public/icons8-quran-42.png";
 
 const formatText = (text) => {
   // Process the text in multiple passes for different formatting types
@@ -160,7 +161,7 @@ const Summary = () => {
           title="summarize" 
           onClick={fetchSurahSummary}
         >
-          <img src="/src/assets/images/icons8-quran-42.png" alt="summarize"/>
+          <img src={icon} alt="summarize"/>
 
         </button>
       </div>
