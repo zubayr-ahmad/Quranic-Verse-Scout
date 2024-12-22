@@ -11,13 +11,16 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1 className="title">QURANIC VERSE SCOUT</h1>
+      <h2 className="title">QURANIC SCOUT</h2>
       <div className="cards-container">
         <div className="card">
           <h2 className="card-title">Verse Finder</h2>
           <p className="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
-            amet nulla auctor, vestibulum magna sed, convallis ex.
+            <ul>
+              <li>Find Quranic verses by describing their context or meaning.</li>
+              <li>Utilizes semantic search technology to match context with relevant verses.</li>
+              <li>Returns the most likely matches from the Quran.</li>
+            </ul>
           </p>
           <button
             className="card-button"
@@ -29,8 +32,12 @@ function Home() {
         <div className="card">
           <h2 className="card-title">Surah Summary</h2>
           <p className="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
-            amet nulla auctor, vestibulum magna sed, convallis ex.
+            <ul>
+              <li>Get concise, accurate summaries of any Surah.</li>
+              <li>Implements RAG-based solution to prevent hallucinations.</li>
+              <li>Search Surahs by name or number.</li>
+              <li>Summaries are generated directly from the verses, ensuring accuracy.</li>
+            </ul>
           </p>
           <button
             className="card-button"
