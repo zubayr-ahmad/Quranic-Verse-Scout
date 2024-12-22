@@ -66,7 +66,7 @@ def translate_to_urdu(text, aws_region="us-east-1"):
 
 
 
-@app.route("/get_ayahs", methods=["GET"])
+@app.route("/api/get_ayahs", methods=["GET"])
 def get_ayahs():
     no_of_ayahs = request.args.get("no_of_ayahs", 10)
     query = request.args.get("query", "find something from quran")
@@ -92,7 +92,7 @@ def create_ayah_json(indexes, ayahs):
     return top_ayahs
 
 
-@app.route('/summarize', methods=['GET'])
+@app.route('/api/summarize', methods=['GET'])
 def summarize_records():
     try:
         # Extract the surah_id from request parameters
@@ -149,7 +149,7 @@ def summarize_records():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {e}"}), 500
     
-@app.route('/translate', methods=['GET'])
+@app.route('/api/translate', methods=['GET'])
 def translate_summary():
     try:
         # Extract the surah_id from request parameters

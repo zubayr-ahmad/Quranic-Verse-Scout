@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h2 className="title">QURANIC SCOUT</h2>
+      <h2 className="title">QURAN SCOUT</h2>
       <div className="cards-container">
         <div className="card">
           <h2 className="card-title">Verse Finder</h2>
