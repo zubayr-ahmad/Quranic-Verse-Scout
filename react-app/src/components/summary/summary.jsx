@@ -183,11 +183,13 @@ const Summary = () => {
           </button>
         </div>
       )}
-      {isTranslating && <p>Translating summary...</p>}
+      {isTranslating && (<div className="loading-message">
+          <p>Translating Summary...</p>
+        </div>)}
       {translatedSummary && (
-        <div className="translated-summary">
-          <h3>Translated Summary:</h3>
-          <p>{translatedSummary}</p>
+        <div className="surah-summary">
+          {/* <h3>Translated Summary:</h3> */}
+          <p id="translation">{translatedSummary}</p>
         </div>
       )}
     </div>
