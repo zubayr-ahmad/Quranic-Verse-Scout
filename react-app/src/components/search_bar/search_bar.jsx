@@ -6,7 +6,7 @@ function Search_Bar({ setAyahs, setIsLoading }) {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    const response = await fetch(`http://localhost:5000/get_ayahs?query=${encodeURIComponent(textAreaValue)}`, {
+    const response = await fetch(`http://localhost:5000/api/get_ayahs?query=${encodeURIComponent(textAreaValue)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
