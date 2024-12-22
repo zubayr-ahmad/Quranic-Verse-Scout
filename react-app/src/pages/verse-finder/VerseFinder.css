@@ -6,19 +6,22 @@ body {
 }
 
 .verse-finder-search-container {
-  max-width: 800px;
-  margin: 20px auto;
+  /* max-width: 800px; */
+  /* margin: 20px auto; */
   text-align: center;
 }
 .verse-finder-container {
   display: flex;
   align-items: flex-start;
+  max-width: 60%;
+  margin: auto;
 }
 
-.verse-finder-title {
+.verse-finder-title h2 {
+  padding-top:30px ;
+  font-size: 3rem;
+  margin-bottom: 20px;
   color: white;
-  /* padding: 10p x; */
-  width: 100%;
 }
 
 .verse-finder-title h1 {

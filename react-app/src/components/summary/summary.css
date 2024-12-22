@@ -1,16 +1,25 @@
 .summary {
-    width: 100%;
+    /* width: 100%; */
     font-family: Arial, sans-serif;
     padding: 20px;
-    max-width: 400px;
+    /* max-width: 400px; */
+    padding-top: 20px;
     /* margin: 0 auto; */
 }
 
+.summary h2 {
+    padding-top:12px ;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+
+}
 .summary-input-container {
+    margin: auto;
     position: relative;
-    max-width: 100%;
+    width: 500px;
     display: flex;
-    gap: 10px;
+    gap: 16px;
 }
 
 .summary-input-search-box {
@@ -64,12 +73,14 @@
 }
 
 .surah-summary {
-    margin-top: 20px;
     padding: 15px 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: #fff;
-    min-width: 700px;
+    /* min-width: 700px; */
+    width: 68%;
+    margin: auto;
+    margin-top: 40px;
 
 }
 
@@ -95,8 +106,9 @@
 
 .loading-message {
     text-align: center;
-    margin-top: 2rem;
-    color: #666;
+    margin-top: 20px;
+    color: white;
+    font-size: larger;
 }
   
   /* Translation section */
@@ -141,4 +153,12 @@
   
   .translate-btn:hover {
     background-color: #0056b3;
+  }
+
+  #translation {
+    font-family: "Noto Nastaliq Urdu", serif;
+    font-size: larger;
+    line-height: 48px;
+    text-align: right;
+    word-spacing: 5px;
   }

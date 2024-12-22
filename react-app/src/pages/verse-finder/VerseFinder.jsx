@@ -9,7 +9,7 @@ function VerseFinder() {
   return (
     <>
       <div className="verse-finder-title">
-        <h1>Verse Finder</h1>
+        <h2>Verse Finder</h2>
       </div>
       <div className="verse-finder-container">
         <div className="verse-finder-search-container">
